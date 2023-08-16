@@ -28,4 +28,20 @@ test.describe("Testing login functionality", () => {
     await page.click("//button[normalize-space()='Log in']"); // click login button
     await page.waitForTimeout(5000);
   });
+
+  test("Failed login - wrong password", async ({ page }) => {
+    await page.goto("https://demoblaze.com/index.html"); // load login page
+
+    await page.locator("#login2").click(); // click login link
+    await page.fill("#loginusername", "nate2"); // fill in username
+    await page.fill("#loginpassword", "kempach"); // fill in password
+
+    page.on("dialog", async (dialog) => {
+      // handle error alert
+      expect(dialog.type()).toContain("alert"); // expect dialog to be an alert
+      expect(dialog.message()).toBe("Wrong password."); // expect error message
+    });
+    await page.click("//button[normalize-space()='Log in']"); // click login button
+    await page.waitForTimeout(5000);
+  });
 });
