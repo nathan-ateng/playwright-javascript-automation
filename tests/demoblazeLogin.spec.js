@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-
+const userName = "nate2";
 test.describe("Testing login functionality", () => {
   test("Successful login", async ({ page }) => {
     await page.goto("https://demoblaze.com/index.html"); // load login page
