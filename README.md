@@ -1,2 +1,2 @@
 # playwright-javascript-automation
-Web automation testing with playwright and javascript ont the demoblaze web application
+Web automation testing with playwright and javascript on the demoblaze web application
