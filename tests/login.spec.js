@@ -40,6 +40,7 @@ test.describe("Testing login functionality", () => {
       // handle error alert
       expect(dialog.type()).toContain("alert"); // expect dialog to be an alert
       expect(dialog.message()).toBe("Wrong password."); // expect error message
+      await dialog.accept();
     });
     await page.click("//button[normalize-space()='Log in']"); // click login button
     await page.waitForTimeout(5000);

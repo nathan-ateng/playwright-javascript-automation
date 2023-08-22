@@ -9,7 +9,7 @@ exports.LoginPage = class LoginPage {
     this.loginBtn = "//button[normalize-space()='Log in']";
   }
   async gotoLoginPage() {
-    await this.page.goto("https://demoblaze.com/index.html");
+    await this.page.goto("https://demoblaze.com/");
   }
 
   async login(userName, userPassword) {
