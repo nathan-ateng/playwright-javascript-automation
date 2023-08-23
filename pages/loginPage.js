@@ -1,5 +1,3 @@
-"use strict";
-
 exports.LoginPage = class LoginPage {
   constructor(page) {
     this.page = page;
@@ -7,6 +5,8 @@ exports.LoginPage = class LoginPage {
     this.userInput = "#loginusername";
     this.userPassword = "#loginpassword";
     this.loginBtn = "//button[normalize-space()='Log in']";
+    this.productList = "#tbodyid div div div h4 a";
+    this.addToCartBtn = "//a[normalize-space()='Add to cart']";
   }
   async gotoLoginPage() {
     await this.page.goto("https://demoblaze.com/");
